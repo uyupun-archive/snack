@@ -13,4 +13,6 @@ $ brew install grpcurl
 $ grpcurl -plaintext localhost:8080 list
 $ grpcurl -plaintext localhost:8080 list snack.HealthCheckService
 $ grpcurl -plaintext -d '{"name": "snack"}' localhost:8080 snack.HealthCheckService.Echo
+$ go install github.com/cosmtrek/air@latest
+$ air
 ```
