@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option go_package = "pkg/grpc/health_check";
+
+package snack;
+
+service HealthCheckService {
+	rpc Echo (PingRequest) returns (PongResponse);
+}
+
+message PingRequest {
+	string name = 1;
+}
+
+message PongResponse {
+	string message = 1;
+}
