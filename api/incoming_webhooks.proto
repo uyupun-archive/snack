@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+option go_package = "pkg/grpc/incoming_webhooks";
+
+package snack;
+
+service IncomingWebhooksService {
+    rpc Register (RegisterRequest) returns (RegisterResponse);
+    rpc Post (PostRequest) returns (PostResponse);
+}
+
+message RegisterRequest {
+	string app_name = 1;
+    string webhook_url = 2;
+}
+
+message RegisterResponse {
+	string message = 1;
+}
+
+message PostRequest {
+	string message = 1;
+}
+
+message PostResponse {
+	string message = 1;
+}

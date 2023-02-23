@@ -11,7 +11,8 @@ import (
 	"google.golang.org/grpc/reflection"
 
 	hc_pb "snack/pkg/grpc/health_check"
-	routes "snack/pkg/routes"
+	iw_pb "snack/pkg/grpc/incoming_webhooks"
+	route "snack/pkg/route"
 )
 
 func main() {
@@ -23,7 +24,8 @@ func main() {
 
 	server := grpc.NewServer()
 
-	hc_pb.RegisterHealthCheckServiceServer(server, routes.NewHealthCheckServer())
+	hc_pb.RegisterHealthCheckServiceServer(server, route.NewHealthCheckServer())
+	iw_pb.RegisterIncomingWebhooksServiceServer(server, route.NewIncomingWebhooksServer())
 
 	reflection.Register(server)
 
