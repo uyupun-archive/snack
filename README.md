@@ -1,5 +1,7 @@
 # Snack
 
+<img src="./logo.png" width="100">
+
 Slackbot Proxy
 
 ### 環境構築
