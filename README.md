@@ -7,5 +7,6 @@ Slackbot Proxy
 ```
 $ brew install protobuf
 $ go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
-$ protoc --go_out=src/grpc src/proto/hello.proto 
+$ go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
+$ protoc --go_out=. src/proto/hello.proto
 ```
