@@ -17,4 +17,8 @@ $ grpcurl -plaintext localhost:8080 list snack.HealthCheckService
 $ grpcurl -plaintext -d '{"name": "snack"}' localhost:8080 snack.HealthCheckService.Echo
 $ go install github.com/cosmtrek/air@latest
 $ air
+$ touch database.sqlite3
+$ go install -tags 'sqlite3' github.com/golang-migrate/migrate/v4/cmd/migrate@latest
+$ migrate create -ext sql -dir pkg/db/migrations -seq create_webhooks_table
+$ migrate -database sqlite3://database.sqlite3 -path pkg/db/migrations up
 ```

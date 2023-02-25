@@ -12,7 +12,7 @@ import (
 
 	hc_pb "snack/pkg/grpc/health_check"
 	iw_pb "snack/pkg/grpc/incoming_webhooks"
-	route "snack/pkg/route"
+	routes "snack/pkg/routes"
 )
 
 func main() {
@@ -24,8 +24,8 @@ func main() {
 
 	server := grpc.NewServer()
 
-	hc_pb.RegisterHealthCheckServiceServer(server, route.NewHealthCheckServer())
-	iw_pb.RegisterIncomingWebhooksServiceServer(server, route.NewIncomingWebhooksServer())
+	hc_pb.RegisterHealthCheckServiceServer(server, routes.NewHealthCheckServer())
+	iw_pb.RegisterIncomingWebhooksServiceServer(server, routes.NewIncomingWebhooksServer())
 
 	reflection.Register(server)
 
