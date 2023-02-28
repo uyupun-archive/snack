@@ -1,6 +1,6 @@
 # Snack
 
-<img src="./logo.png" width="100">
+<img src="./logo.png" width="500">
 
 Slackbot Proxy
 
