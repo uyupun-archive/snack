@@ -20,4 +20,5 @@ $ air
 $ go install entgo.io/ent/cmd/ent@latest
 $ ent new --target pkg/db/schema Webhook
 $ ent generate ./pkg/db/schema --target pkg/db/ent
+$ go run scripts/migrate.go
 ```
